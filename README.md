@@ -9,25 +9,25 @@ package main
 
 import (
 	"github.com/AkshatM/caprice"
-    "fmt"
+	"fmt"
 )
 
 func main() {
 	rng := caprice.TrueRNG(<api key>)
 
 	// generate 10 integers in base 10 between 1 and 100 with no duplicates 
-    intArray, err := rng.GenerateIntegers(10, 1, 100, false)
-    fmt.Printf("%v, intArray)
+	intArray, err := rng.GenerateIntegers(10, 1, 100, false)
+	fmt.Printf("%v, intArray)
 
-    // same as last time, but get back the entirety of the JSON response as a Result struct
-    result, err := rng.GenerateIntegersRaw(10, 1, 100, false)
-    fmt.Printf("%+v", result)
+	// same as last time, but get back the entirety of the JSON response as a Result struct
+	result, err := rng.GenerateIntegersRaw(10, 1, 100, false)
+	fmt.Printf("%+v", result)
 
-    // same as last time, but get back a structure that contains all the information you need
-    // to verify the data you received along with the data itself in convenient format.
-    verifiableResult, err := rng.GenerateSignedIntegers(10, 1, 100, false)
+	// same as last time, but get back a structure that contains all the information you need
+	// to verify the data you received along with the data itself in convenient format.
+	verifiableResult, err := rng.GenerateSignedIntegers(10, 1, 100, false)
 	fmt.Printf("%v", verifiableResult.Data) // actual data
-    fmt.Printf("%+v", verifiableResult)
+	fmt.Printf("%+v", verifiableResult)
 }
 ```
 
@@ -36,7 +36,7 @@ func main() {
 For now, 
 
 ```
-go get - github.com/AkshatM/caprice
+go get -u github.com/AkshatM/caprice
 ```
 
 # Documentation
@@ -51,6 +51,7 @@ With the exception of `verifySignature`, all API calls are supported as listed [
 
 # Road Map
 
-1.0: Add support for using `advisoryDelay`, making this code truly thread-safe. 
-1.0: Get documentation up. 
-1.0: Add mocked network calls for decoupled testing.
+## 1.0: 
+- Add support for using `advisoryDelay`, making this code truly thread-safe. 
+- Get documentation up. 
+- Add mocked network calls for decoupled testing.
