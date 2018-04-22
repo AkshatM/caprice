@@ -1,6 +1,9 @@
 package caprice
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"log"
+)
 
 // Generate `n` random integers between `min` and `max`.
 // If `replacement` is true, pick random numbers with replacement. Default is false.
@@ -190,6 +193,8 @@ func (rng trueRNG) GenerateSignedBlobs(n, size int, format string) (SignedString
 // JSON that is exactly what is given to you by Signed<Int|Float|String>Data.Raw and a `signature`, also contained
 // in Signed<Int|Float|String>Data.Signature.
 func (rng trueRNG) VerifySignature(random json.RawMessage, signature string) (bool, Error) {
+
+	log.Print("Method VerifySignature is currently broken and under active maintenance. Do not expect accurate results.")
 
 	// it turns out json.RawMessage does not survive across multiple marshalings. Our random data is
 	// interpreted as a byte array, and its base64 encoding is sent along. To prevent this, we unmarshal
