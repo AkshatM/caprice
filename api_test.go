@@ -42,7 +42,7 @@ func TestGenerateSignedIntegers(t *testing.T) {
 				t.Error(err)
 			}
 			if result == false {
-				t.Error("Oh shit")
+				t.Error("Signature verification failed. Known issue: https://github.com/AkshatM/caprice/issues/6")
 			}
 		})
 	})

@@ -156,14 +156,14 @@ type IntegersReq struct {
 	N           int    `json:"n"`
 	Min         int    `json:"min"`
 	Max         int    `json:"max"`
-	Replacement bool   `json:"replacement,omitempty"`
+	Replacement bool   `json:"replacement"`
 }
 
 type DecimalFractionsReq struct {
 	ApiKey        string `json:"apiKey"`
 	N             int    `json:"n"`
 	DecimalPlaces int    `json:"decimalPlaces"`
-	Replacement   bool   `json:"replacement,omitempty"`
+	Replacement   bool   `json:"replacement"`
 }
 
 type GaussiansReq struct {
@@ -179,7 +179,7 @@ type StringsReq struct {
 	N           int    `json:"n"`
 	Length      int    `json:"length"`
 	Characters  string `json:"characters"`
-	Replacement bool   `json:"replacement,omitempty"`
+	Replacement bool   `json:"replacement"`
 }
 
 type UUIDsReq struct {
